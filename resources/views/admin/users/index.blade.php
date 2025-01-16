@@ -5,11 +5,7 @@
     <body>
         <h1>Usuários</h1>
 
-        @if(session()->has('success'))
-            <div>
-                {{ session('success') }}
-            </div>
-        @endif
+        <x-alert/>
 
         <a href="{{ route('users.create') }}">Adicionar novo usuário</a>
         <table>
@@ -35,7 +31,8 @@
                         <td>
                             {{ $user->email }}
                         </td>
-                        <td>-</td>
+                        <td><a href="{{ route('users.edit', $user->id) }}">Edit</a></td>
+                        <td><a href="{{ route('users.show', $user->id) }}">Detalhes</a></td>
                     </tr>
                 @empty
                     <tr>
