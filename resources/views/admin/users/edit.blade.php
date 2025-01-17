@@ -9,7 +9,6 @@
         </h2>
     </div>
 
-<x-alert/>
 <form action="{{ route('users.update', $user->id) }}" method='POST'>
     @method('PUT')
     @include('admin.users.partials.form')
